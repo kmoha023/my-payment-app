@@ -1,0 +1,137 @@
+{
+	"appConfig": {
+		"tableConfig": {
+			"paymentEnabled": true,
+			"adjustEnabled": true,
+			"columns": [
+				{
+					"fieldName": "vendorId",
+					"displayName": "Vendor ID",
+					"display": false,
+					"filteringEnabled": false,
+					"sortingEnabled": true
+				},
+				{
+					"fieldName": "quantity",
+					"displayName": "Quantity",
+					"display": false,
+					"filteringEnabled": false,
+					"sortingEnabled": true
+				},
+				{
+					"fieldName": "amountBal",
+					"displayName": "Amount Bal",
+					"display": false,
+					"filteringEnabled": false,
+					"sortingEnabled": true
+				},
+				{
+					"fieldName": "amountDue",
+					"displayName": "Amount Due",
+					"display": false,
+					"filteringEnabled": false,
+					"sortingEnabled": true
+				},
+				{
+					"fieldName": "creditBal",
+					"displayName": "Credit Bal",
+					"display": false,
+					"filteringEnabled": false,
+					"sortingEnabled": true
+				},
+				{
+					"fieldName": "pay",
+					"displayName": "Pay",
+					"display": false,
+					"filteringEnabled": false,
+					"sortingEnabled": false
+				}
+			]
+		},
+		"dataEndPoints": {
+			"call2": {
+				"API": "/invoices",
+				"method": "GET"
+			},
+			"call3": {
+				"API": "/vendors",
+				"method": "GET"
+			},
+			"creditPost": {
+				"API": "/credit/apply",
+				"method": "POST"
+			},
+			"paymentPost": {
+				"API": "/payment",
+				"method": "POST"
+			}
+		}
+	},
+	"invoices": [
+		{
+			"invoiceId": 1234,
+			"vendorId": "G1",
+			"quantity": 20,
+			"product": "Apple",
+			"amountBal": 129.92,
+			"amountDue": 25.50,
+			"invoiceDate": "04/01/2020"
+		},
+		{
+			"invoiceId": 4578,
+			"vendorId": "B1",
+			"product": "Coke",
+			"quantity": 500,
+			"amountBal": 1024.12,
+			"amountDue": 512.50,
+			"invoiceDate": "03/31/2020"
+		},
+		{
+			"invoiceId": 9999,
+			"vendorId": "W1",
+			"quantity": 1000,
+			"Product": "Napkin",
+			"amountBal": 12.25,
+			"amountDue": 12.25,
+			"invoiceDate": "03/31/2020"
+		},
+		{
+			"invoiceId": 1000,
+			"vendorId": "W1",
+			"quantity": 25,
+			"Product": "Sanitizer",
+			"amountBal": 25.00,
+			"amountDue": 12.25,
+			"invoiceDate": "03/31/2020"
+		},
+		{
+			"invoiceId": 1025,
+			"vendorId": "W1",
+			"quantity": 1000,
+			"Product": "Napkin",
+			"amountBal": 0,
+			"amountDue": 0,
+			"invoiceDate": "03/31/2020"
+		}
+	],
+	"vendors": [
+		{
+			"vendorId": "D1",
+			"vendorName": "Delmonte",
+			"creditBal": 600.0
+		},
+		{
+			"vendorId": "T1",
+			"vednorName": "Target"
+		},
+		{
+			"vendorId": "W1",
+			"vendorName": "Walmart",
+			"creditBal": 12.25
+		},
+		{
+			"vendorId": "G1",
+			"creditBal": 0.0
+		}
+	]
+}
